@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 
 /** LaunchExternalAppPlugin */
 public class LaunchexternalappPlugin implements MethodCallHandler, FlutterPlugin {

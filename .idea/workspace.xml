@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="396d4887-49eb-4859-8c77-36c7ce459556" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/launchexternalapp/LaunchexternalappPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/launchexternalapp/LaunchexternalappPlugin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
