@@ -31,6 +31,7 @@ class LaunchApp {
   static Future<int> openApp(
       {String? iosUrlScheme,
       String? androidPackageName,
+      String? androidUrl,
       String? appStoreLink,
       bool? openStore}) async {
     String? packageName = Platform.isIOS ? iosUrlScheme : androidPackageName;
@@ -45,6 +46,7 @@ class LaunchApp {
 
     return await _channel.invokeMethod('openApp', {
       'package_name': packageName,
+      'android_url': androidUrl,
       'open_store': openStore == false ? "false" : "open it",
       'app_store_link': appStoreLink
     }).then((value) {

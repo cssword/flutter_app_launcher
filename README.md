@@ -124,3 +124,8 @@ This returns true and false based on the fact whether app is installed or not.
         );
       }
     }
+
+## Additional Features
+
+Add page url in APP
+
