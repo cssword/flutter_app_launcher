@@ -58,7 +58,10 @@ public class LaunchexternalappPlugin implements MethodCallHandler, FlutterPlugin
       }
     } else if (call.method.equals("openApp")) {
       String packageName = call.argument("package_name");
-      result.success(openApp(packageName, call.argument("open_store").toString(), call.argument("android_url").toString()));
+      result.success(openApp(packageName, 
+              call.argument("open_store").toString(), 
+              call.argument("android_classs_name").toString(),
+              call.argument("android_url").toString()));
 
     } else {
       result.notImplemented();
@@ -74,7 +77,7 @@ public class LaunchexternalappPlugin implements MethodCallHandler, FlutterPlugin
     }
   }
 
-  private String openApp(String packageName, String openStore, String url) {
+  private String openApp(String packageName, String openStore, String className, String url) {
     if (isAppInstalled(packageName)) {
       Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
       if (launchIntent != null) {
@@ -84,6 +87,9 @@ public class LaunchexternalappPlugin implements MethodCallHandler, FlutterPlugin
           launchIntent.setAction("android.intent.action.VIEW");
           Uri uri = Uri.parse(url);
           launchIntent.setData(uri);
+        }
+        if(!TextUtils.isEmpty(className)) {
+          launchIntent.setClassName(packageName, className);
         }
         context.startActivity(launchIntent);
         return "app_opened";

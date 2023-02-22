@@ -32,6 +32,7 @@ class LaunchApp {
       {String? iosUrlScheme,
       String? androidPackageName,
       String? androidUrl,
+      String? androidClassName,
       String? appStoreLink,
       bool? openStore}) async {
     String? packageName = Platform.isIOS ? iosUrlScheme : androidPackageName;
@@ -47,6 +48,7 @@ class LaunchApp {
     return await _channel.invokeMethod('openApp', {
       'package_name': packageName,
       'android_url': androidUrl,
+      'android_class_name': androidClassName,
       'open_store': openStore == false ? "false" : "open it",
       'app_store_link': appStoreLink
     }).then((value) {
